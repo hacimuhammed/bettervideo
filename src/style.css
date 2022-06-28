@@ -1,0 +1,67 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    color: rgb(31, 29, 29);
+}
+html, body{margin: 0; padding: 0;}
+body{
+    min-width: 300px;
+    min-height: 400px;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+h1{
+    font-size: 2.9em;
+}
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+}
+button{
+    border: none;
+    width: 250px;
+    height: 60px;
+    background-color: rgba(245, 12, 253, 0.105);
+    border-radius: 100px;
+    box-shadow: 5px 10px 10px 1px rgba(0, 0, 0, 0.153);
+    font-size: 2em;
+    transition: 300ms;
+}
+button:hover,.down a svg:hover{
+    cursor: pointer;
+    transition: 300ms;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.243);
+    transform: scale(1.04);
+    margin-top: 10px;
+}
+
+button:active{
+    cursor: -webkit-grab; 
+    cursor: grab;
+    box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.243);
+    transition: 300ms;
+    transform: scale(1.08);
+}
+.up{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.down{
+    height: 200px;
+    width: 250px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.down a svg{
+    padding: 10px;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.243);
+    border-radius: 100px;
+    transition: 300ms;
+}
