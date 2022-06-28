@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "Better Video",
+    "version": "1",
+    "description": "Change Video Color",
+
+    "browser_action": {
+        "default_title": "App",
+        "default_popup": "src/views/popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["src/js/in-content.js"]
+        }
+    ],
+    "background": {
+        "scripts": ["src/js/background.js"],
+        "persistent": false
+    },
+    "content_security_policy":
+        "script-src 'self' 'unsafe-eval'; object-src 'self'; img-src * data: 'self' 'unsafe-eval'",
+    "offline_enabled": true,
+    "permissions": ["tabs", "<all_urls>", "activeTab"]
+}
