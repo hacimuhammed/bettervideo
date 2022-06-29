@@ -31,7 +31,7 @@ function app(numb){
     // Access the background window object
 const backgroundWindow = chrome.extension.getBackgroundPage();
 // Do anything with the exposed variables from background.js
-console.log(backgroundWindow.sampleBackgroundGlobal);
+//console.log(backgroundWindow.sampleBackgroundGlobal);
 
 // This port enables a long-lived connection to in-content.js
 let port = null;
