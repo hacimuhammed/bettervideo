@@ -18,7 +18,6 @@ const initPopupScript = () => {
     const darkMode = document.getElementById('darkMode');
     const normalMode = document.getElementById('normalMode');
     const focusMode = document.getElementById('focusMode');
-    const testMode = document.getElementById('testMode')
 
     mainButton.addEventListener('click', ()=>{app(0);});
     brightMode.addEventListener('click', ()=>{app(1);});
@@ -26,7 +25,6 @@ const initPopupScript = () => {
     darkMode.addEventListener('click', ()=>{app(3);});
     normalMode.addEventListener('click', ()=>{app(4);});
     focusMode.addEventListener('click', ()=>{app(5);});
-    testMode.addEventListener('click', ()=>{app(6);});
 };
 
 function app(numb){
