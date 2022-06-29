@@ -65,7 +65,6 @@ getTab().then(tab => {
     // Send a test message to in-content.js
 
     sendPortMessage('Message from popuptts!');
-    yellow();
 });
 }
 
