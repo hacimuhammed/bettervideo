@@ -14,9 +14,6 @@ const sendPortMessage = data => port.postMessage(data);
 // Handle incoming popup messages
 const popupMessageHandler = message => {
 
-    console.log('in-content.js - message from popup:', message);
-    console.log('testhaci');
-
     if(message == 0){
         const list = document.querySelectorAll("embed");
         for (let i = 0; i < list.length; i++) {
@@ -28,39 +25,109 @@ const popupMessageHandler = message => {
             list2[i].style.filter = "saturate(500%)";
             list2[i].style.mixBlendMode = "lighten";
         }
+        const list3 = document.querySelectorAll("iframe");
+        for (let i = 0; i < list3.length; i++) {
+            list3[i].style.filter = "saturate(500%)";
+            list3[i].style.mixBlendMode = "lighten";
+        }
     }
     else if(message == 1){
         const list = document.querySelectorAll("embed");
         for (let i = 0; i < list.length; i++) {
-            list[i].style.filter = "saturate(100%)";
-            list[i].style.mixBlendMode = "lighten";
+            list[i].style.filter = "brightness(150%)";
         }
         const list2 = document.querySelectorAll("video");
         for (let i = 0; i < list2.length; i++) {
-            list2[i].style.filter = "saturate(100%)";
-            list2[i].style.mixBlendMode = "lighten";
+            list2[i].style.filter = "brightness(150%)";
+        }
+        const list3 = document.querySelectorAll("iframe");
+        for (let i = 0; i < list3.length; i++) {
+            list3[i].style.filter = "brightness(150%)";
+        }
+
+    }
+    else if(message == 2){
+        const list = document.querySelectorAll("embed");
+        for (let i = 0; i < list.length; i++) {
+            list[i].style.filter = "contrast(150%)";
+        }
+        const list2 = document.querySelectorAll("video");
+        for (let i = 0; i < list2.length; i++) {
+            list2[i].style.filter = "contrast(150%)";
+        }
+        const list3 = document.querySelectorAll("iframe");
+        for (let i = 0; i < list3.length; i++) {
+            list3[i].style.filter = "contrast(150%)";
+        }
+
+    }
+    else if(message == 3){
+        const list = document.querySelectorAll("embed");
+        for (let i = 0; i < list.length; i++) {
+            list[i].style.filter = "brightness(50%)";
+        }
+        const list2 = document.querySelectorAll("video");
+        for (let i = 0; i < list2.length; i++) {
+            list2[i].style.filter = "brightness(50%)";
+        }
+        const list3 = document.querySelectorAll("iframe");
+        for (let i = 0; i < list3.length; i++) {
+            list3[i].style.filter = "brightness(50%)";
+        }
+
+    }
+    else if(message == 4){
+        const list = document.querySelectorAll("embed");
+        for (let i = 0; i < list.length; i++) {
+            list[i].style.filter = "none";
+        }
+        const list2 = document.querySelectorAll("video");
+        for (let i = 0; i < list2.length; i++) {
+            list2[i].style.filter = "none";
+        }
+        const list3 = document.querySelectorAll("iframe");
+        for (let i = 0; i < list3.length; i++) {
+            list3[i].style.filter = "none";
+        }
+
+    }
+    else if(message == 5){
+
+        const list = document.querySelectorAll("embed");
+        for (let i = 0; i < list.length; i++) {
+            list[i].style.filter = "blur(10px)";
+        }
+        const list2 = document.querySelectorAll("video");
+        for (let i = 0; i < list2.length; i++) {
+            list2[i].style.filter = "blur(10px)";
+        }
+        const list3 = document.querySelectorAll("iframe");
+        for (let i = 0; i < list3.length; i++) {
+            list3[i].style.filter = "blur(10px)";
         }
     }
+
 };
+
 
 // Start scripts after setting up the connection to popup
 chrome.extension.onConnect.addListener(popupPort => {
     // Listen for popup messages
     popupPort.onMessage.addListener(popupMessageHandler);
-    // Set listener for disconnection (aka. popup closed)
-    popupPort.onDisconnect.addListener(() => {
-        console.log('in-content.js - disconnected from popup');
 
-    });
+    // Set listener for disconnection (aka. popup closed)
+    //popupPort.onDisconnect.addListener(() => {
+    //    console.log('in-content.js - disconnected from popup');
+    //
+    //});
+
     // Make popup port accessible to other methods
     port = popupPort;
     // Perform any logic or set listeners
     sendPortMessage('message from in-content.js');
 });
 
-// Response handler for short lived messages
-const handleBackgroundResponse = response =>
-    console.log('in-content.js - Received response:', response);
-    console.log("abccba");
-// Send a message to background.js
+//const handleBackgroundResponse = response =>
+//    console.log('in-content.js - Received response:', response);
+
 chrome.runtime.sendMessage('Message from in-content.js!', handleBackgroundResponse);

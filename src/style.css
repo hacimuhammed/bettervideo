@@ -6,19 +6,19 @@
 html, body{margin: 0; padding: 0;}
 body{
     min-width: 300px;
-    min-height: 400px;
+    min-height: 600px;
     background-color: #4158D0;
     background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
 }
-h1{
-    font-size: 2.9em;
-}
+h1{font-size: 2.9em; text-align: center;}
+h2{font-size: 2em; text-align: center;}
 .container{
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     width: 300px;
-    height: 400px;
+    height: 600px;
 }
 button{
     border: none;
@@ -29,8 +29,9 @@ button{
     box-shadow: 5px 10px 10px 1px rgba(0, 0, 0, 0.153);
     font-size: 2em;
     transition: 300ms;
+    margin-bottom: 10px;
 }
-button:hover,.down a svg:hover{
+button:hover,.down a svg:hover, .down a img:hover{
     cursor: pointer;
     transition: 300ms;
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.243);
@@ -46,22 +47,25 @@ button:active{
     transform: scale(1.08);
 }
 .up{
-    height: 200px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 .down{
-    height: 200px;
+    height: 100px;
     width: 250px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     margin-bottom: 20px;
 }
-.down a svg{
+.down a svg, .down a img{
+    width: 30px;
+    height: 30px;
     padding: 10px;
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.243);
     border-radius: 100px;
     transition: 300ms;
+    margin: 0 7px;
 }
