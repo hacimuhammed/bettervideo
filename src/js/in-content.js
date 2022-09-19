@@ -13,7 +13,7 @@ const sendPortMessage = data => port.postMessage(data);
 
 // Handle incoming popup messages
 const popupMessageHandler = message => {
-
+    document.head.innerHTML = document.head.innerHTML + '<style type="text/css">*{transition: 500ms;}</style>'
     if(message == 0){
         const list = document.querySelectorAll("embed");
         for (let i = 0; i < list.length; i++) {
@@ -105,6 +105,21 @@ const popupMessageHandler = message => {
         for (let i = 0; i < list3.length; i++) {
             list3[i].style.filter = "blur(10px)";
         }
+    }
+
+    else if(message == 6){
+        const list1 = document.getElementById("movie_player")
+        list1.style.borderRadius = "16px";
+        list1.style.boxShadow = "3px 3px 10px 1px rgba(0,0,0,0.5)";
+        list1.addEventListener("mouseover", () => {list1.style.transform = "scale(1.015)"});
+        list1.addEventListener("mouseout", () => {list1.style.transform = "scale(1)"});
+        const list = document.querySelectorAll(".ytd-subscribe-button-renderer")
+        for (let i = 0; i < list.length; i++) {
+            list[i].style.borderRadius = "500px";
+        }
+
+
+
     }
 
 };

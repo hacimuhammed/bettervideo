@@ -40,7 +40,7 @@ button:hover,.down a svg:hover, .down a img:hover{
 }
 
 button:active{
-    cursor: -webkit-grab; 
+    cursor: -webkit-grab;
     cursor: grab;
     box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.243);
     transition: 300ms;
@@ -68,4 +68,28 @@ button:active{
     border-radius: 100px;
     transition: 300ms;
     margin: 0 7px;
+}
+
+.gg-youtube {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 16px;
+    height: 10px;
+    box-shadow: 0 0 0 2px;
+    border-radius:
+        15px 15px 15px 15px /
+        45px 45px 45px 45px
+}
+.gg-youtube::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    left: 7px;
+    top: 2px;
+    border-left: 4px solid currentColor;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent
 }
